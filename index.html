@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PRIMEWOOD SUPPLY | Legna da ardere</title>
+<meta name="description" content="Legna da ardere di faggio, quercia e legna mista in Italia.">
+<style>
+:root {
+  --green:#19382d;
+  --green2:#284c3d;
+  --gold:#c9a96e;
+  --cream:#f7f5ef;
+  --ink:#242b26;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+}
+header {
+  background:var(--green);
+  color:white;
+  padding:25px 6%;
+  text-align:center;
+}
+header h1 {
+  font-family:Georgia,serif;
+  letter-spacing:2px;
+  margin:0;
+}
+header p {color:var(--gold)}
+nav {margin-top:20px}
+nav a {
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+}
+.hero {
+  background:linear-gradient(120deg,#19382d,#536b45);
+  color:white;
+  text-align:center;
+  padding:85px 20px;
+}
+.hero h2 {
+  font:clamp(36px,6vw,58px) Georgia,serif;
+}
+.hero p {font-size:18px}
+.btn {
+  display:inline-block;
+  background:var(--gold);
+  color:#19382d;
+  padding:14px 22px;
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+}
+section {padding:55px 6%}
+h2.section-title {
+  text-align:center;
+  font:36px Georgia,serif;
+}
+.products {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+  max-width:1100px;
+  margin:auto;
+}
+.product {
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 20px #0001;
+}
+.product-image {
+  height:190px;
+  display:flex;
+  align-items:end;
+  padding:18px;
+  color:white;
+  font:26px Georgia,serif;
+  background:linear-gradient(135deg,#74502e,#b38b55,#354c35);
+}
+.product:nth-child(2) .product-image {
+  background:linear-gradient(135deg,#493321,#98704a,#263d2c);
+}
+.product:nth-child(3) .product-image {
+  background:linear-gradient(135deg,#8b6942,#596442,#263d2c);
+}
+.product-content {padding:20px}
+.product p {color:#687068;min-height:55px}
+.price {font-size:24px;font-weight:bold}
+select,input,textarea {
+  width:100%;
+  padding:12px;
+  margin:7px 0 15px;
+  border:1px solid #ddd;
+  border-radius:5px;
+  background:white;
+}
+.product button {width:100%}
+.note {
+  max-width:1000px;
+  margin:25px auto;
+  padding:15px;
+  background:#eee5d5;
+  border-left:4px solid var(--gold);
+}
+.contact {
+  background:#eae6dc;
+}
+.contact form {
+  max-width:650px;
+  margin:auto;
+}
+footer {
+  background:var(--green);
+  color:white;
+  padding:30px;
+  text-align:center;
+}
+@media(max-width:600px) {
+  nav a {display:inline-block;margin:8px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>PRIMEWOOD SUPPLY</h1>
+<p>LA QUALITÀ DEL LEGNO, LA FORZA DELLA FIDUCIA</p>
+<nav>
+<a href="#prodotti">Prodotti</a>
+<a href="#servizi">Servizi</a>
+<a href="#contatti">Contatti</a>
+</nav>
+</header>
+
+<div class="hero">
+<h2>La legna giusta per il tuo inverno</h2>
+<p>Faggio, quercia e legna mista. Scopri le nostre proposte.</p>
+<a class="btn" href="#prodotti">Scopri i prodotti</a>
+</div>
+
+<section id="prodotti">
+<h2 class="section-title">Il nostro catalogo</h2>
+<div class="products">
+
+<div class="product">
+<div class="product-image">Legna di faggio</div>
+<div class="product-content">
+<h3>Legna di faggio</h3>
+<p>Legno duro, apprezzato per la combustione regolare.</p>
+<div class="price">Da 169 €</div>
+<label>Formato</label>
+<select id="faggio">
+<option>500 kg - 169 € indicativi</option>
+<option>1000 kg - 338 € indicativi</option>
+<option>Altro formato - Preventivo</option>
+</select>
+<button class="btn" onclick="add('Legna di faggio','faggio')">Aggiungi</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">Legna di quercia</div>
+<div class="product-content">
+<h3>Legna di quercia</h3>
+<p>Legno compatto, ideale per una combustione duratura.</p>
+<div class="price">Da 189 €</div>
+<label>Formato</label>
+<select id="quercia">
+<option>500 kg - 189 € indicativi</option>
+<option>1000 kg - 378 € indicativi</option>
+<option>Altro formato - Preventivo</option>
+</select>
+<button class="btn" onclick="add('Legna di quercia','quercia')">Aggiungi</button>
+</div>
+</div>
+
+<div class="product">
+<div class="product-image">Legna mista</div>
+<div class="product-content">
+<h3>Legna mista</h3>
+<p>Selezione di legni duri per il riscaldamento domestico.</p>
+<div class="price">Da 159 €</div>
+<label>Formato</label>
+<select id="mista">
+<option>300 kg - Preventivo</option>
+<option>500 kg - 159 € indicativi</option>
+<option>1000 kg - 318 € indicativi</option>
+<option>Altro formato - Preventivo</option>
+</select>
+<button class="btn" onclick="add('Legna mista','mista')">Aggiungi</button>
+</div>
+</div>
+
+</div>
+<div class="note">
+<strong>Nota:</strong> prezzi e formati sono indicativi e devono essere confermati con il fornitore. Il costo di consegna viene calcolato separatamente.
+</div>
+</section>
+
+<section id="servizi">
+<h2 class="section-title">Come funziona</h2>
+<div class="products">
+<div><h3>01. Scegli</h3><p>Seleziona il tipo e il formato di legna.</p></div>
+<div><h3>02. Richiedi</h3><p>Inviaci la tua richiesta con il CAP di consegna.</p></div>
+<div><h3>03. Conferma</h3><p>Ricevi il preventivo e le modalità di pagamento.</p></div>
+</div>
+</section>
+
+<section class="contact" id="contatti">
+<h2 class="section-title">Richiedi un preventivo</h2>
+<form onsubmit="sendQuote(event)">
+<label>Nome e cognome</label>
+<input id="nome" required>
+<label>E-mail</label>
+<input id="email" type="email" required>
+<label>CAP di consegna</label>
+<input id="cap" required>
+<label>Città e provincia</label>
+<input id="citta" required>
+<label>Indirizzo</label>
+<input id="indirizzo" required>
+<label>Prodotti selezionati</label>
+<textarea id="ordine" rows="4" readonly></textarea>
+<label>Altre informazioni</label>
+<textarea id="note" rows="3"></textarea>
+<button class="btn" type="submit">Invia richiesta</button>
+</form>
+</section>
+
+<footer>
+<h3>PRIMEWOOD SUPPLY</h3>
+<p>La qualità del legno, la forza della fiducia.</p>
+<p>dhiexpresss0000@gmail.com</p>
+<p>Italia</p>
+</footer>
+
+<script>
+let cart=[];
+function add(name,id){
+ const format=document.getElementById(id).value;
+ cart.push(name+" - "+format);
+ document.getElementById("ordine").value=cart.join("\n");
+ alert("Prodotto aggiunto alla richiesta!");
+}
+function sendQuote(e){
+ e.preventDefault();
+ if(!cart.length){
+  alert("Seleziona prima un prodotto.");
+  return;
+ }
+ const val=id=>document.getElementById(id).value;
+ const subject=encodeURIComponent("Richiesta preventivo PRIMEWOOD SUPPLY");
+ const body=encodeURIComponent(
+ "Nome: "+val("nome")+
+ "\nEmail: "+val("email")+
+ "\nCAP: "+val("cap")+
+ "\nCittà: "+val("citta")+
+ "\nIndirizzo: "+val("indirizzo")+
+ "\nProdotti: "+val("ordine")+
+ "\nNote: "+val("note")
+ );
+ location.href="mailto:dhiexpresss0000@gmail.com?subject="+subject+"&body="+body;
+}
+</script>
+</body>
+</html>
